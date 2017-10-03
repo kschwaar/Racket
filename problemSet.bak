@@ -1,0 +1,14 @@
+#lang racket
+(define hypotenuse (lambda (x y)
+                       (sqrt (+ (sqr x) (sqr y)))))
+(define sphere (lambda (x)
+                   (/ (* 4 pi (expt x 3)) 3)))
+
+(define water (lambda (x)
+                  (if (< x 32)
+                      'Solid
+                      (if (< x 212)
+                          'Liquid
+                          'Gas))))
+(define (dot-product a b)
+  (foldl + (map * a b)))
